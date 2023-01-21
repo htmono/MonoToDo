@@ -7,4 +7,4 @@ Very simple To-Do in terminal. Does not need any additional dependencies.
 [E]xit.
 
 To-Do:
-Add feature to mark tasks as "done".
+Add feature to mark tasks as "Done".
