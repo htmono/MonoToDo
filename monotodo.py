@@ -5,7 +5,20 @@
 # tallenna lista tiedostoon
 # lataa lista tiedostosta
 
-taskList = ['testi', 'ykskaks', 'jehjehkolme']
+import json
+import os.path
+
+
+# Check if you already have saved file. If not, create new empty list
+def isThereSave():
+    global taskList
+    file_exists = os.path.exists("mytasks.json")
+    if file_exists == True:
+        taskList = []
+        file = open("mytasks.json")
+        taskList = json.load(file)
+    else:
+        taskList = []
 
 def createTask():
     taskList.append(input("Add task to the list: "))
@@ -25,11 +38,22 @@ def listTasks():
     for x in taskList:
         print(f"Task {taskList.index(x) + 1}: {x}")
 
+def saveTasks():
+    with open('mytasks.json', 'w') as file:
+        json.dump(taskList, file)
+
 def showHelp():
-    print("This is a placeholder help text")
+    print("Available commands:")
+    print("[A]dd tasks")
+    print("[D]elete task")
+    print("[L]ist all your current tasks")
+    print("[S]ave to 'mytasks.json'")
+    print("[E]xit")
+
 
 # Main loop
 def main():
+    isThereSave()
     # Introbanner
     print("Welcome to")
     print("  __  __  ___  _  _  ___    _____ ___      ___   ___  ")
@@ -38,7 +62,7 @@ def main():
     print(" |_|  |_|\___/|_|\_|\___/    |_| \___/    |___/ \___/ ")
     print("                                                      ")
     print("------------------------------------------------------")
-
+    showHelp()
     while True:
 
         stuff = (input(": "))
@@ -47,12 +71,17 @@ def main():
         if stuff.lower() == str.lower("add") or stuff.lower() == str.lower("a"):
             createTask()
 
-        # List all your tasks with "list" or "l"
+        # Delete task with "del" or "d"
         if stuff.lower() == str.lower("del") or stuff.lower() == str.lower("d"):
             deleteTask()
 
+        # List all your tasks with "list" or "l"
         elif stuff.lower() == str("list") or stuff.lower() == str("l") or stuff.lower() == str("ls"):
             listTasks()
+
+        # Save your To-Do list to a file
+        elif stuff.lower() == str("save") or stuff.lower() == str("s"):
+            saveTasks()
 
         # Show help with "help" or "h"
         elif stuff.lower() == str("help") or stuff.lower() == str("h"):
