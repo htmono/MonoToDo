@@ -1,5 +1,5 @@
 # MonoToDo
-Very simple To-Do in terminal. Does not need any additional dependencies.
+To-Do app in terminal. Does not need any additional dependencies.
 
 [A]dd or [D]elete tasks.
 [L]ist all your tasks.

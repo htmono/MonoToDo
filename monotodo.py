@@ -1,9 +1,9 @@
-# Tarvittavat toiminnot:
-# luo uusi tehtävä/task ja tallenna se listaan(?)
-# poista tehtävä listalta
-# näytä lista tehtävistä
-# tallenna lista tiedostoon
-# lataa lista tiedostosta
+# Functionalities:
+# Create new task and save it to the list
+# delete task from the list
+# Show the list
+# Save to file
+# Load from file automatically at the start
 
 import json
 import os.path
