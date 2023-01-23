@@ -2,7 +2,7 @@
 # Create new task and save it to the list
 # delete task from the list
 # Show the list
-# Save to file
+# Save to 'mytasks.json file'
 # Load from file automatically at the start
 
 import json
@@ -33,6 +33,11 @@ def deleteTask():
         print("!!No such task exists!!")
         listTasks()
 
+# Mark task as done. Give it a '*' marking and move it to another list.
+def taskDone():
+    pass
+
+
 def listTasks():
     print("Your tasks: ")
     for x in taskList:
@@ -47,7 +52,7 @@ def showHelp():
     print("[A]dd tasks")
     print("[D]elete task")
     print("[L]ist all your current tasks")
-    print("[S]ave to 'mytasks.json'")
+    print("[S]ave")
     print("[E]xit")
 
 
