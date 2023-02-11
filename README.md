@@ -8,3 +8,4 @@ To-Do app in terminal. Does not need any additional dependencies.
 
 To-Do:
 Add feature to mark tasks as "Done".
+UI work
